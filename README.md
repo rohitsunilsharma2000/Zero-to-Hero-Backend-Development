@@ -3,7 +3,7 @@
 ### 🚀 **High-Level Backend Developer Roadmap (Spring Cloud Native)**
 
 1. **🔹 Core Java & OOP**
-   - Java fundamentals, OOP principles, collections, Java 8 features [link]()
+   - Java fundamentals, OOP principles, collections, Java 8 features [link](https://github.com/rohitsunilsharma2000/-Learn-Backend-Development-from-Scratch/blob/main/1.%F0%9F%94%B9%20Core%20Java%20%26%20OOP.md)
 
 2. **🔹 Spring Boot & REST APIs**
    - RESTful API development, validation, exception handling, Swagger
