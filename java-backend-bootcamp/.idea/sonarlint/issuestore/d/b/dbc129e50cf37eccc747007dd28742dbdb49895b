@@ -1,0 +1,16 @@
+
+W	java:S125"<This block of commented-out lines of code should be removed.(¼ª‹{8¥Æºì2
+]	java:S125"<This block of commented-out lines of code should be removed.(›Î—Òùÿÿÿÿ8ÇãÂºì2
+L	java:S106*"+Replace this use of System.out by a logger.(äáËãøÿÿÿÿ8ÛãÂºì2
+G	java:S106+"+Replace this use of System.out by a logger.(úÜïä8İãÂºì2
+G	java:S106,"+Replace this use of System.out by a logger.(âÁ®ƒ8ßãÂºì2
+L	java:S106-"+Replace this use of System.out by a logger.(ÅÙŠûÿÿÿÿ8àãÂºì2
+G	java:S106."+Replace this use of System.out by a logger.(ùŠ® 8àãÂºì2
+L	java:S106/"+Replace this use of System.out by a logger.(ı´‡ıÿÿÿÿ8àãÂºì2
+L	java:S1063"+Replace this use of System.out by a logger.(äáËãøÿÿÿÿ8áãÂºì2
+G	java:S1064"+Replace this use of System.out by a logger.(úÜïä8âãÂºì2
+]
+java:S1854;";Remove this useless assignment to local variable "myThali".(Íô©Èøÿÿÿÿ8¼ÄÅºì2
+N
+java:S1481;",Remove this unused "myThali" local variable.(Íô©Èøÿÿÿÿ8¿ÄÅºì2
+W	java:S125>"<This block of commented-out lines of code should be removed.(Ï’Ø'8ÀÄÅºì2
