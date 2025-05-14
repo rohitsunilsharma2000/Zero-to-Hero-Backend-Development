@@ -6,13 +6,13 @@
    - Java fundamentals, OOP principles, collections, Java 8 features [link](https://github.com/rohitsunilsharma2000/-Learn-Backend-Development-from-Scratch/blob/main/1.%F0%9F%94%B9%20Core%20Java%20%26%20OOP.md)
 
 2. **🔹 Spring Boot & REST APIs**
-   - RESTful API development, validation, exception handling, Swagger [link]()
+   - RESTful API development, validation, exception handling, Swagger [link](https://github.com/rohitsunilsharma2000/-Learn-Backend-Development-from-Scratch/blob/main/2.%F0%9F%94%B9%20Spring%20Boot%20%26%20REST%20APIs.md)
 
 3. **🔹 Spring Data JPA & Database**
-   - ORM, MySQL/PostgreSQL integration, entity relationships [link]()
+   - ORM, MySQL/PostgreSQL integration, entity relationships [link](https://github.com/rohitsunilsharma2000/-Learn-Backend-Development-from-Scratch/blob/main/3.%F0%9F%94%B9%20Spring%20Data%20JPA%20%26%20Database%20ROADMAP%20(Beginner%20to%20Advanced).md)
 
 4. **🔹 Microservices Architecture**
-   - Spring Cloud, Eureka, API Gateway, Feign, config server, resilience [link]()
+   - Spring Cloud, Eureka, API Gateway, Feign, config server, resilience [link](https://github.com/rohitsunilsharma2000/-Learn-Backend-Development-from-Scratch/blob/main/4.%F0%9F%94%B9%20Microservices%20Architecture%20Learning%20Roadmap.md)
 
 5. **🔹 Kafka & Event-Driven Systems**
    - Kafka fundamentals, Spring Kafka, producer-consumer, DLQ, exactly-once
