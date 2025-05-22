@@ -1,76 +1,153 @@
 
 ---
 
-### 🏥 **Hospital Management System - Microservices Version**
+### 🛍️ **eCommerce System - Microservices Version**
 
-A modular microservice-based application for managing hospital workflows like patients, doctors, appointments, and billing. It integrates frontend (React) and backend (Spring Boot), using real-world microservice architecture best practices.
+A modular microservice-based eCommerce platform for managing products, orders, payments, users, and cart workflows. Includes a React-based frontend, Spring Boot backend, and best practices in microservice communication, resilience, observability, and deployment.
 
 ---
 
 ### ✅ **Why this project?**
 
-It covers all your listed topics:
+It covers all the topics you've listed:
 
-* REST API + Spring Boot + CRUD (Patients, Doctors, Appointments, Billing)
-* DTOs, ModelMapper, MapStruct
-* Exception Handling & Validation
-* Spring Cloud (Config, Eureka, Gateway, LoadBalancer, Sleuth, Zipkin)
-* Resilience4j
+* REST API + Spring Boot + CRUD (Product, Order, Cart, User, Payment)
+* DTO, ModelMapper, MapStruct
+* Validation & Exception Handling
+* Spring Cloud: Eureka, Config, Gateway, LoadBalancer, Feign/WebClient
+* Distributed Tracing: Sleuth + Zipkin
+* Circuit Breaker & Retry: Resilience4j
+* Actuator for production readiness
+* React frontend as separate microservice
+* Swagger/OpenAPI docs
 * Docker & Docker Compose
-* React frontend microservice
-* OpenAPI docs
-* Functional programming components (e.g., Java 8 streams and lambdas)
-* Step-by-step addition of new microservices (e.g., Pharmacy, Lab Reports)
+* Functional Java (Streams, Lambdas)
+* Step-by-step integration of new features (e.g., Reviews, Wishlist)
 
 ---
 
-### 🧱 Suggested Microservices:
+### 🧱 Suggested Microservices
 
-| Microservice           | Responsibilities                        |
-| ---------------------- | --------------------------------------- |
-| `user-service`         | Manage doctors, nurses, admins, etc.    |
-| `patient-service`      | Register, update, list patients         |
-| `appointment-service`  | Book, cancel, reschedule appointments   |
-| `billing-service`      | Generate bills, manage payments         |
-| `notification-service` | Send emails/SMS on appointment creation |
-| `config-server`        | Centralized configuration               |
-| `api-gateway`          | Unified entry point, route to services  |
-| `service-registry`     | Eureka server for discovery             |
-| `react-frontend`       | UI for patients and doctors to interact |
-
----
-
-### 🔧 Tech Stack:
-
-| Layer                 | Tools                               |
-| --------------------- | ----------------------------------- |
-| Backend               | Spring Boot, Spring Data JPA, MySQL |
-| DTO Mapping           | ModelMapper or MapStruct            |
-| Service Communication | RestTemplate, WebClient, Feign      |
-| Config Management     | Spring Cloud Config Server          |
-| Service Discovery     | Eureka Server                       |
-| Load Balancing        | Spring Cloud LoadBalancer           |
-| Circuit Breaker       | Resilience4j                        |
-| Monitoring            | Spring Boot Actuator                |
-| Tracing               | Spring Cloud Sleuth + Zipkin        |
-| Dockerization         | Docker, Docker Compose              |
-| Frontend              | React.js (as separate microservice) |
-| API Docs              | SpringDoc OpenAPI (Swagger)         |
+| Microservice       | Responsibilities                              |
+| ------------------ | --------------------------------------------- |
+| `product-service`  | CRUD for products, categories, stock          |
+| `order-service`    | Manage orders, link with user & product       |
+| `user-service`     | Manage customers (register, view, update)     |
+| `payment-service`  | Simulate order payments and status tracking   |
+| `cart-service`     | Manage user carts and cart items              |
+| `config-server`    | Centralized config management                 |
+| `api-gateway`      | Single entry point for all services           |
+| `service-registry` | Eureka service discovery                      |
+| `react-frontend`   | UI for browsing products, managing cart/order |
 
 ---
 
-### 🧪 Suggested Feature Development Steps:
+### 🔧 Tech Stack
 
-1. **Start with `patient-service`**:
-
-   * REST API with DTO, Validation, Exception Handling.
-2. **Add `appointment-service`** with Feign client call to `patient-service`.
-3. **Set up `config-server`, `eureka-server`, and `api-gateway`.**
-4. **Add frontend React app**, integrated via API Gateway.
-5. **Implement Resilience4j** in `appointment-service` for patient-service communication.
-6. **Add tracing with Sleuth + Zipkin.**
-7. **Dockerize each microservice**, then use `docker-compose` for full setup.
-8. **Document all APIs using OpenAPI/Swagger.**
+| Layer             | Tools                                   |
+| ----------------- | --------------------------------------- |
+| Backend           | Spring Boot, Spring Data JPA, MySQL     |
+| Mapping           | DTOs + ModelMapper / MapStruct          |
+| Communication     | OpenFeign, RestTemplate, WebClient      |
+| Configuration     | Spring Cloud Config Server              |
+| Service Discovery | Spring Cloud Eureka                     |
+| Load Balancing    | Spring Cloud LoadBalancer               |
+| Fault Tolerance   | Resilience4j (CircuitBreaker, Retry)    |
+| Monitoring        | Spring Boot Actuator                    |
+| Tracing           | Spring Cloud Sleuth + Zipkin            |
+| Dockerization     | Docker, Docker Compose                  |
+| Frontend          | React (as a separate containerized app) |
+| API Docs          | SpringDoc OpenAPI (Swagger)             |
 
 ---
 
+### 🧪 Suggested Feature Development Steps
+
+1. **Start with `product-service`**
+
+   * Create ProductEntity, ProductDTO, Mapper
+   * Implement CRUD REST APIs
+   * Add validation, exception handling
+   * Add OpenAPI Swagger
+
+2. **Add `user-service`**
+
+   * Create customer management (register, update, list)
+   * Use DTO + ModelMapper or MapStruct
+   * Exception and validation layers
+
+3. **Add `order-service`**
+
+   * Integrate with Product & User using Feign client
+   * Add order tracking, order history
+   * Implement Resilience4j (retry/fallback when Product Service is down)
+
+4. **Implement `payment-service`**
+
+   * Simulate dummy payments with status tracking
+   * Use WebClient to interact from order-service
+
+5. **Add `cart-service`**
+
+   * CRUD APIs to manage user carts
+   * Logic to transfer cart → order on checkout
+
+6. **Set up `config-server`, `eureka-server`, and `api-gateway`**
+
+   * Externalize configs
+   * Use Gateway to expose `/api/products/**`, `/api/orders/**`, etc.
+
+7. **Add `react-frontend`**
+
+   * Product listing, cart management, checkout UI
+   * Connect via API Gateway
+   * Build, Dockerize, and link with backend
+
+8. **Add Observability**
+
+   * Sleuth + Zipkin for tracing
+   * Actuator endpoints (`/actuator/health`, `/metrics`)
+   * Custom metrics optional
+
+9. **Dockerization + Compose**
+
+   * Write `Dockerfile` for each service
+   * Combine with `docker-compose.yml`
+   * Setup networks, healthchecks, DB volumes
+
+10. **Add Functional Java usage**
+
+* Java Streams in service layers (e.g., order summary, cart totals)
+* Lambdas for filtering, mapping product lists, etc.
+
+---
+
+### 🗂️ Folder Structure (Monorepo)
+
+```
+ecommerce-microservices/
+├── product-service/
+├── user-service/
+├── order-service/
+├── payment-service/
+├── cart-service/
+├── config-server/
+├── service-registry/
+├── api-gateway/
+├── react-frontend/
+├── docker-compose.yml
+└── README.md
+```
+
+---
+
+### 🧩 Future Extensions
+
+* 🔹 `review-service`: Ratings and reviews for products
+* 🔹 `wishlist-service`: Save favorite products
+* 🔹 `inventory-service`: Track low stock, reorder logic
+* 🔹 `admin-dashboard`: Analytics, inventory, sales reports (React or Thymeleaf)
+
+---
+
+<img src=""/>
