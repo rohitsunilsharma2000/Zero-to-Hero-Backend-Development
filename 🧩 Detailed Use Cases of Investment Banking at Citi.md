@@ -550,11 +550,331 @@ public enum FeeStatus {
 
 ---
 
-Would you like me to:
+Excellent! Let’s enrich the project with **4 more advanced and practical investment banking use cases**, bringing the total to **15**. These use cases mirror Citi’s real-world services, and you can integrate them as independent modules or endpoints in your Spring Boot system.
 
-1. Generate a **modular folder structure** to organize all 11 cases?
-2. Provide a **complete working example** (e.g., IPO Management with Controller, DTO, Service, JPA, Swagger)?
-3. Bundle them in a **multi-module Maven project**?
+---
 
-Let me know your preferred next step!
+## 🔹 12. **Secondary Equity Offering Management**
+
+### 🧑‍🏫 Layman Explanation:
+
+After a company has gone public, it might issue additional shares to raise more funds. Citi helps manage this **secondary equity offering** to ensure compliance, pricing, and investor communication.
+
+### 🛠️ Technical Features:
+
+* Create and track secondary equity issues.
+* Associate offering with original IPO.
+* Notify stakeholders.
+
+### 🗃️ JPA Entity:
+
+```java
+@Entity
+public class SecondaryOffering {
+    @Id @GeneratedValue
+    private Long id;
+
+    private String companyName;
+    private int sharesOffered;
+    private BigDecimal offerPrice;
+
+    private LocalDate offerDate;
+
+    @ManyToOne
+    private IPORequest originalIpo;
+
+    @Enumerated(EnumType.STRING)
+    private OfferingStatus status;
+}
+
+public enum OfferingStatus {
+    DRAFTED, PUBLISHED, SUBSCRIBED, CLOSED
+}
+```
+
+---
+
+## 🔹 13. **Capital Structure Advisory**
+
+### 🧑‍🏫 Layman Explanation:
+
+Citi advises companies on the best mix of debt, equity, and hybrid securities to **optimize funding while minimizing financial risk**.
+
+### 🛠️ Technical Features:
+
+* Analyze a company's current capital structure.
+* Provide strategy recommendations.
+* Compare debt/equity ratios.
+
+### 🗃️ JPA Entity:
+
+```java
+@Entity
+public class CapitalStructureAnalysis {
+    @Id @GeneratedValue
+    private Long id;
+
+    private String companyName;
+    private BigDecimal totalDebt;
+    private BigDecimal totalEquity;
+    private double debtEquityRatio;
+
+    private String recommendation;
+    private LocalDate reviewedDate;
+    private String analyst;
+}
+```
+
+---
+
+## 🔹 14. **Fairness Opinion Generation**
+
+### 🧑‍🏫 Layman Explanation:
+
+In major mergers or acquisitions, Citi may provide a **fairness opinion** — a formal report to say whether a deal is financially fair for shareholders.
+
+### 🛠️ Technical Features:
+
+* Submit requests for fairness reviews.
+* Record analysis and final opinion.
+* Track internal reviewers and external disclosures.
+
+### 🗃️ JPA Entity:
+
+```java
+@Entity
+public class FairnessOpinion {
+    @Id @GeneratedValue
+    private Long id;
+
+    private String dealName;
+    private BigDecimal proposedValue;
+    private String client;
+
+    private String financialConclusion; // e.g., "Fair to shareholders"
+    private String supportingAnalysis;
+
+    private String reviewer;
+    private LocalDate opinionDate;
+}
+```
+
+---
+
+## 🔹 15. **Structured Product Design**
+
+### 🧑‍🏫 Layman Explanation:
+
+Citi creates **custom financial instruments** (structured products) by combining bonds, derivatives, and options tailored to client needs (e.g., capital protection + stock upside).
+
+### 🛠️ Technical Features:
+
+* Design structured product models.
+* Define risk-return parameters.
+* Store documentation and scenario analysis.
+
+### 🗃️ JPA Entity:
+
+```java
+@Entity
+public class StructuredProduct {
+    @Id @GeneratedValue
+    private Long id;
+
+    private String productName;
+    private String underlyingAsset; // e.g., S&P 500 Index
+
+    private String structureType; // e.g., capital-protected, yield-enhanced
+    private String riskLevel; // Low, Medium, High
+
+    private BigDecimal notionalAmount;
+    private LocalDate maturityDate;
+
+    private String payoffLogic;
+    private String documentationUrl;
+}
+```
+
+---
+
+## 📦 Summary Table: 15 Use Cases
+
+| #  | Use Case                   | Entity                        | Description                  |
+| -- | -------------------------- | ----------------------------- | ---------------------------- |
+| 1  | IPO Management             | `IPORequest`                  | New public offering          |
+| 2  | M\&A Deal Tracking         | `MergerDeal`, `Advisor`       | Acquisition tracking         |
+| 3  | Debt/Equity Underwriting   | `UnderwritingRequest`         | Securities issuance          |
+| 4  | Portfolio Advisory         | `InvestmentAdvice`, `Client`  | Portfolio suggestions        |
+| 5  | Market Reports             | `MarketReport`                | Sector insights              |
+| 6  | Syndicated Loans           | `SyndicatedLoan`, `Repayment` | Multi-bank loans             |
+| 7  | Risk & Compliance          | `RiskAssessment`              | Deal-level risk              |
+| 8  | Pitch Book Tracking        | `PitchBook`                   | Pre-deal proposals           |
+| 9  | Cross-Border Transactions  | `CrossBorderTransaction`      | International deal handling  |
+| 10 | ESG Evaluation             | `ESGReport`                   | Environmental score          |
+| 11 | Deal Fee Management        | `DealFee`                     | Service fee + status         |
+| 12 | Secondary Equity Offerings | `SecondaryOffering`           | Post-IPO capital raise       |
+| 13 | Capital Structure Advisory | `CapitalStructureAnalysis`    | Equity vs. debt mix          |
+| 14 | Fairness Opinion           | `FairnessOpinion`             | Report on shareholder value  |
+| 15 | Structured Products        | `StructuredProduct`           | Custom financial instruments |
+
+---
+
+## 🔧 Optional Enhancements Across the Project
+
+| Feature              | Technology Suggestion                      |
+| -------------------- | ------------------------------------------ |
+| Full Audit Trails    | Spring Data Envers or custom logs          |
+| Role-based Access    | `@PreAuthorize` and JWT with roles         |
+| Scheduled Jobs       | `@Scheduled` for report generation         |
+| File Storage         | AWS S3 or Local FileSystem for documents   |
+| Search & Filter APIs | Spring Data `Specification`, QueryDSL      |
+| Notification System  | Email service via SendGrid or SMTP         |
+| Pagination & Sorting | `Pageable` support in all `findAll()` APIs |
+
+---
+
+## Comprehensive UI implementation suggestion
+
+
+Here's a **comprehensive UI implementation suggestion** for all **15 Investment Banking use cases** using **React + Next.js**, designed to mimic real-world systems like Citi’s investment platforms.
+
+This design ensures modularity, usability, and separation of concerns, supporting role-based views and responsive layouts.
+
+---
+
+## 🔷 Tech Stack for UI
+
+| Layer         | Tool/Library                                     |
+| ------------- | ------------------------------------------------ |
+| Frontend      | React (with Next.js)                             |
+| Styling       | Tailwind CSS / SCSS                              |
+| Forms         | React Hook Form + Yup                            |
+| API Calls     | Axios / Fetch API                                |
+| State Mgmt    | Zustand or React Context (or Redux if preferred) |
+| Auth          | NextAuth.js / JWT                                |
+| Charts        | Recharts or Chart.js                             |
+| Tables        | React Table / TanStack Table                     |
+| Role-based UI | Higher-Order Components / Middleware             |
+| UI Components | shadcn/ui or Chakra UI                           |
+
+---
+
+## 🗂️ Folder Structure Suggestion (Next.js App)
+
+```
+/app
+  /dashboard              → Main authenticated layout
+  /auth                   → Login/Register
+  /ipo-management         → IPO Request pages
+  /ma-deals               → M&A Deal management
+  /underwriting           → Equity/Debt underwriting
+  /portfolio-advice       → Client investment advice
+  /market-reports         → Publish/view reports
+  /syndicated-loans       → Syndicated loan dashboard
+  /risk-compliance        → Risk assessment forms
+  /pitchbooks             → Pitch deck uploads and status
+  /cross-border           → Foreign transaction deals
+  /esg                    → ESG Score dashboards
+  /fees                   → Deal-based fee management
+  /secondary-offerings    → Post-IPO offerings
+  /capital-structure      → Company capital breakdown
+  /fairness-opinions      → M&A fairness reporting
+  /structured-products    → Complex investment product design
+
+/shared
+  /components             → Navbar, Sidebar, Cards, Form elements
+  /hooks                  → Custom hooks (auth, fetch)
+  /utils                  → Formatters, validators
+  /services               → Axios API services
+```
+
+---
+
+## 🧭 UI Feature Map for All 15 Modules
+
+| Use Case                      | Page Components        | UI Features                                                                                |
+| ----------------------------- | ---------------------- | ------------------------------------------------------------------------------------------ |
+| **IPO Management**            | `/ipo-management`      | Form to apply for IPO, IPO list view, status chip (e.g., FILED, PENDING), filters by date  |
+| **M\&A Deal Tracker**         | `/ma-deals`            | Deal table with search, multi-select advisor modal, deal stage timeline                    |
+| **Underwriting**              | `/underwriting`        | Radio switch for Debt/Equity, input fields for amount/date, underwriting calendar          |
+| **Portfolio Advisory**        | `/portfolio-advice`    | Client selector dropdown, portfolio summary graph, rebalance suggestions                   |
+| **Market Reports**            | `/market-reports`      | Markdown editor or PDF uploader, published reports list, filter by category (Tech, Pharma) |
+| **Syndicated Loans**          | `/syndicated-loans`    | Loan dashboard, tabs for participants/repayments, repayment tracker table                  |
+| **Risk & Compliance**         | `/risk-compliance`     | Risk entry form, deal linking, toggle for HIGH/MEDIUM/LOW, mitigation plan textbox         |
+| **Pitch Book Tracking**       | `/pitchbooks`          | Upload pitch (PDF or link), card view of pitchbooks with status chip (WON/LOST)            |
+| **Cross-Border Transactions** | `/cross-border`        | Two country selectors, FX rate input, advisor contact forms                                |
+| **ESG Evaluation**            | `/esg`                 | ESG scoring sliders, tag system for risk flags, ESG trend line chart                       |
+| **Fee Management**            | `/fees`                | Fee calculation helper, filters for overdue status, status coloring                        |
+| **Secondary Offerings**       | `/secondary-offerings` | Add new secondary offering, view previous IPO linkage, table of offers                     |
+| **Capital Structure**         | `/capital-structure`   | Input equity/debt, auto calculate D/E ratio, chart (pie or bar)                            |
+| **Fairness Opinions**         | `/fairness-opinions`   | Financial conclusion textarea, reviewer name autocomplete, PDF viewer                      |
+| **Structured Products**       | `/structured-products` | Form builder (product type, maturity, logic), document link input, risk color indicator    |
+
+---
+
+## 🛡️ Role-Based Layout
+
+| Role         | Views Accessed                                  |
+| ------------ | ----------------------------------------------- |
+| `ADMIN`      | All dashboards, user management                 |
+| `BANKER`     | IPO, M\&A, Underwriting, Pitchbooks             |
+| `ANALYST`    | Risk, ESG, Capital Structure, Portfolio Advice  |
+| `COMPLIANCE` | Risk, Fairness Opinions, Fee Tracking           |
+| `CLIENT`     | Portfolio Summary, Reports, Structured Products |
+
+Use `middleware.ts` (Next.js 13+) or `getServerSideProps` for auth gating + role redirection.
+
+---
+
+## 📱 Mobile Responsiveness
+
+Use Tailwind's responsive classes (`md:`, `lg:`) and `Grid` layout for:
+
+* Collapsible sidebar
+* Card-based views on mobile
+* Mobile filter panel with off-canvas
+
+---
+
+## 🔁 Integration with Spring Boot APIs
+
+Use `services/api.ts` for encapsulating all API requests:
+
+```ts
+// services/ipo.ts
+export const createIPO = (data) => axios.post('/api/ipo-management', data);
+export const getIPOs = () => axios.get('/api/ipo-management');
+```
+
+Secure with Bearer token (JWT):
+
+```ts
+axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+```
+
+---
+
+## 📊 Dashboard Example (Banker Home Page)
+
+* KPI Cards:
+
+  * Total IPOs filed this quarter
+  * Active M\&A deals
+  * Deals under compliance review
+* Charts:
+
+  * Deal funnel (IPO → Underwriting → Market)
+  * ESG score trends (bar chart)
+
+---
+
+Would you like:
+
+* A **sample Next.js page** for one of the modules (e.g., IPO management)?
+* A **starter repo** with all folders and pages pre-generated?
+* A **Postman collection** for Spring Boot endpoints to connect the frontend?
+
+Let me know how deep you'd like to go next!
+
+
 
