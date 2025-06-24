@@ -31,4 +31,4 @@
 
 ---
 
-<img src="https://github.com/rohitsunilsharma2000/-Learn-Backend-Development-from-Scratch/blob/main/roadmap.png?raw=true" alt="High-Level Backend Developer Roadmap (Spring Cloud Native)"/>
+<img src="https://github.com/rohitsunilsharma2000/Zero-to-Hero-Backend-Development/blob/main/java/images/roadmap.png?raw=true" alt="High-Level Backend Developer Roadmap (Spring Cloud Native)"/>
