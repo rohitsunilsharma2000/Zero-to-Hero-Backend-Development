@@ -1,3 +1,4 @@
+
 ---
 
 ## 📝 KCNA Exam Domains & Weights
