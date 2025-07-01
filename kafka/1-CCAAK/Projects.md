@@ -1,7 +1,7 @@
 
 ---
 
-# 🧩 **CCAAK Learning Task Plan with Projects (4 Weeks – Full Syllabus)**  
+# 🧩 **CCAAK Learning Task Plan with Projects (4 Modules – Full Syllabus)**  
 > 🎯 **Goal**: Master Apache Kafka cluster administration across core concepts, security, performance, and troubleshooting
 
 ---
@@ -10,14 +10,14 @@
 
 | Domain                                | Weight | Covered In |
 |--------------------------------------|--------|------------|
-| Kafka Fundamentals                   | 15%    | Week 1     |
-| Cluster Management & Optimization    | 30%    | Week 2     |
-| Kafka Security                       | 15%    | Week 3     |
-| Troubleshooting & Integration        | 40%    | Week 4     |
+| Kafka Fundamentals                   | 15%    | Module 1     |
+| Cluster Management & Optimization    | 30%    | Module 2     |
+| Kafka Security                       | 15%    | Module 3     |
+| Troubleshooting & Integration        | 40%    | Module 4     |
 
 ---
 
-## 🗓️ Week 1 – Kafka Core Fundamentals
+## 🗓️ Module 1 – Kafka Core Fundamentals
 > 📘 Domain: **Kafka Fundamentals (15%)**
 
 ### ✅ Tasks:
@@ -28,7 +28,7 @@
 
 ### 💻 **Project: Basic Kafka Setup + Topic Simulation**
 
-📂 `/ccak-week1-kafka-basics/`
+📂 `/ccak-Module1-kafka-basics/`
 - Docker Compose setup (Zookeeper + Kafka)
 - CLI to create topics, describe, alter configs
 - Simulate message flow: producer → 3-partition topic → multiple consumers
@@ -36,7 +36,7 @@
 
 ---
 
-## 🗓️ Week 2 – Cluster Management & Optimization
+## 🗓️ Module 2 – Cluster Management & Optimization
 > 📘 Domain: **Cluster Scaling + Performance (30%)**
 
 ### ✅ Tasks:
@@ -48,7 +48,7 @@
 
 ### 💻 **Project: Performance-Tuned Kafka Cluster**
 
-📂 `/ccak-week2-cluster-management/`
+📂 `/ccak-Module2-cluster-management/`
 - Configure `log.retention.ms`, `segment.bytes`, `num.io.threads`
 - Add 2nd broker and balance topics
 - Monitor using Prometheus + Grafana
@@ -56,7 +56,7 @@
 
 ---
 
-## 🗓️ Week 3 – Kafka Security (Auth, TLS, ACLs)
+## 🗓️ Module 3 – Kafka Security (Auth, TLS, ACLs)
 > 📘 Domain: **Kafka Security (15%)**
 
 ### ✅ Tasks:
@@ -67,7 +67,7 @@
 
 ### 💻 **Project: Kafka Secure Channel Simulation**
 
-📂 `/ccak-week3-security/`
+📂 `/ccak-Module3-security/`
 - Generate certs and keys using OpenSSL
 - Configure Kafka for TLS and SASL
 - Create ACLs for topic-specific read/write
@@ -75,7 +75,7 @@
 
 ---
 
-## 🗓️ Week 4 – Troubleshooting, Connect, Schema Registry
+## 🗓️ Module 4 – Troubleshooting, Connect, Schema Registry
 > 📘 Domain: **Design, Troubleshooting & Integration (40%)**
 
 ### ✅ Tasks:
@@ -87,7 +87,7 @@
 
 ### 💻 **Project: Kafka Integration Lab + Incident Simulation**
 
-📂 `/ccak-week4-troubleshooting/`
+📂 `/ccak-Module4-troubleshooting/`
 - Deploy FileStream → Kafka → Elasticsearch pipeline
 - Configure Avro messages with Schema Registry
 - Simulate broker crash and consumer lag
