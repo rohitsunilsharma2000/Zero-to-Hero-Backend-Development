@@ -1,24 +1,24 @@
 
 ---
 
-# 🧩 **CCDAK Learning Task Plan with Projects (4 Weeks – Full Syllabus)**
+# 🧩 **CCDAK Learning Task Plan with Projects (4 Modules – Full Syllabus)**
 
 > 🎯 Goal: Become a production-ready Kafka developer with strong grasp of Producer/Consumer APIs, Kafka Streams, Schema Registry, and deployment best practices.
 
 ---
 
-## 📘 Domain-to-Week Mapping
+## 📘 Domain-to-Module Mapping
 
-| Week       | Focus Area                                    | Domain Weight        |
+| Module       | Focus Area                                    | Domain Weight        |
 | ---------- | --------------------------------------------- | -------------------- |
-| 1️⃣ Week 1 | Kafka Core & CLI Tools                        | 40% (Design)         |
-| 2️⃣ Week 2 | Kafka Java Producer/Consumer APIs             | 30% (Development)    |
-| 3️⃣ Week 3 | Streams, ksqlDB, Schema Registry              | 30% (Testing/Deploy) |
-| 4️⃣ Week 4 | Delivery Guarantees, Transactions, REST Proxy | Bonus + Review       |
+| 1️⃣ Module 1 | Kafka Core & CLI Tools                        | 40% (Design)         |
+| 2️⃣ Module 2 | Kafka Java Producer/Consumer APIs             | 30% (Development)    |
+| 3️⃣ Module 3 | Streams, ksqlDB, Schema Registry              | 30% (Testing/Deploy) |
+| 4️⃣ Module 4 | Delivery Guarantees, Transactions, REST Proxy | Bonus + Review       |
 
 ---
 
-## 🗓️ Week 1 – Kafka Core, Topics & CLI Tools
+## 🗓️ Module 1 – Kafka Core, Topics & CLI Tools
 
 > 📘 Domain: **Application Design (40%)**
 
@@ -31,7 +31,7 @@
 
 ### 💻 **Project: Newsfeed Event Publisher CLI**
 
-📂 `/ccdak-week1-cli-newsfeed/`
+📂 `/ccdak-Module1-cli-newsfeed/`
 
 * Set up Kafka via Docker Compose
 * Create a topic with compaction and 3 partitions
@@ -40,7 +40,7 @@
 
 ---
 
-## 🗓️ Week 2 – Kafka Java Producer & Consumer APIs
+## 🗓️ Module 2 – Kafka Java Producer & Consumer APIs
 
 > 📘 Domain: **Domain Development (30%)**
 
@@ -53,7 +53,7 @@
 
 ### 💻 **Project: Order Management Microservice**
 
-📂 `/ccdak-week2-order-service/`
+📂 `/ccdak-Module2-order-service/`
 
 * Java-based OrderProducer sends keyed order events
 * OrderConsumer groups them by customer ID
@@ -62,7 +62,7 @@
 
 ---
 
-## 🗓️ Week 3 – Kafka Streams, ksqlDB & Schema Registry
+## 🗓️ Module 3 – Kafka Streams, ksqlDB & Schema Registry
 
 > 📘 Domain: **Deployment & Testing (30%)**
 
@@ -75,7 +75,7 @@
 
 ### 💻 **Project: Clickstream Aggregator with Avro + Streams**
 
-📂 `/ccdak-week3-clickstream-analytics/`
+📂 `/ccdak-Module3-clickstream-analytics/`
 
 * Generate Avro-encoded click events
 * Use Streams to count clicks per session/user
@@ -84,7 +84,7 @@
 
 ---
 
-## 🗓️ Week 4 – Delivery Guarantees, REST Proxy, Transactions
+## 🗓️ Module 4 – Delivery Guarantees, REST Proxy, Transactions
 
 > 📘 Domains: **All + Bonus Topics**
 
@@ -97,7 +97,7 @@
 
 ### 💻 **Project: Transactional Bank Transfer System**
 
-📂 `/ccdak-week4-bank-transfer-exactly-once/`
+📂 `/ccdak-Module4-bank-transfer-exactly-once/`
 
 * Simulate two-topic transaction: debit + credit
 * Use `KafkaProducer.beginTransaction()`, `commitTransaction()`
@@ -117,14 +117,14 @@
 
 ---
 
-## ✅ Weekly Outcomes Summary
+## ✅ Modulely Outcomes Summary
 
-| Week | Project Folder                           | Outcome                            |
+| Module | Project Folder                           | Outcome                            |
 | ---- | ---------------------------------------- | ---------------------------------- |
-| 1️⃣  | `ccdak-week1-cli-newsfeed`               | CLI mastery, Kafka core confidence |
-| 2️⃣  | `ccdak-week2-order-service`              | Strong API dev, consumer offsets   |
-| 3️⃣  | `ccdak-week3-clickstream-analytics`      | Streaming + Schema Registry        |
-| 4️⃣  | `ccdak-week4-bank-transfer-exactly-once` | Transactions, REST Proxy, testing  |
+| 1️⃣  | `ccdak-Module1-cli-newsfeed`               | CLI mastery, Kafka core confidence |
+| 2️⃣  | `ccdak-Module2-order-service`              | Strong API dev, consumer offsets   |
+| 3️⃣  | `ccdak-Module3-clickstream-analytics`      | Streaming + Schema Registry        |
+| 4️⃣  | `ccdak-Module4-bank-transfer-exactly-once` | Transactions, REST Proxy, testing  |
 
 ---
 
